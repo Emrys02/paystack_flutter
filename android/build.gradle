@@ -2,7 +2,7 @@ group 'com.paystack.paystack_flutter'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.7.10'
+    ext.kotlin_version = '2.2.0'
     repositories {
         google()
         mavenCentral()
@@ -32,12 +32,12 @@ android {
     compileSdk 34
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
 
     sourceSets {
@@ -50,7 +50,11 @@ android {
     }
 
     dependencies {
-        implementation 'com.paystack.android:paystack-ui:0.0.8'
+        def composeBom = platform('androidx.compose:compose-bom:2023.10.01')
+        implementation composeBom
+        implementation 'androidx.compose.ui:ui'
+        implementation 'androidx.compose.animation:animation'
+        implementation 'com.paystack.android:paystack-ui:0.0.10'
 
         testImplementation 'org.jetbrains.kotlin:kotlin-test'
         testImplementation 'org.mockito:mockito-core:5.0.0'
