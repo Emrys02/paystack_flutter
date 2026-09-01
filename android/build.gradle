@@ -29,7 +29,7 @@ android {
         namespace 'com.paystack.paystack_sdk'
     }
 
-    compileSdk 34
+    compileSdk 37
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
