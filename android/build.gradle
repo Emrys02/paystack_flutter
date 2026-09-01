@@ -30,6 +30,7 @@ android {
     }
 
     compileSdk 37
+    targetSdk 37
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
